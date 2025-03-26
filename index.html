@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Task Manager</title>
+</head>
+<body>
+    <div class="container" id="auth-container">
+        <h2>Task Manager - Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="registerUser()">Register</button>
+        <button onclick="loginUser()">Login</button>
+    </div>
+    
+    <div class="container" id="task-container" style="display:none;">
+        <h2>Task Manager</h2>
+        <input type="text" id="task-name" placeholder="Task Name">
+        <input type="date" id="task-date">
+        <select id="task-priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
+    
+        <div class="button-group"></div>
+            <button onclick="addTask()">Add Task</button>
+            <button onclick="clearCompletedTasks()">Clear Completed</button>
+            <button onclick="resetTasks()">Reset Tasks</button>
+            <button onclick="logoutUser()">Logout</button>
+            <button onclick="sortTasksByPriority()">Sort by Priority</button>
+            <button onclick="sortTasksByDueDate()">Sort by Due Date</button>
+            <h3>Task Progress: <span id="progress-count">0</span>% completed</h3>
+            <h3>Pending Tasks: <span id="pending-count">0</span></h3>
+        </div>
+        
+        <div id="task-list"></div>
+    </div>
+
+ <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,125 @@
+:root {
+    --primary-bg: #1a1a2e;
+    --secondary-bg: #16213e;
+    --text-color: #eaeaea;
+    --button-bg: #ff5733;
+    --button-hover: #c70039;
+    --border-radius: 8px;
+    --task-bg: #0f3460;
+    --task-hover: #1f4068;
+    --priority-low: #28a745;
+    --priority-medium: #ffc107;
+    --priority-high: #dc3545;
+    --completed-task: #888;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background: var(--secondary-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+    width: 420px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+.container:hover {
+    transform: scale(1.02);
+}
+input, select {
+    width: 90%;
+    padding: 12px;
+    margin: 12px 0;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--task-bg);
+    color: var(--text-color);
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+}
+button {
+    background: var(--button-bg);
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    margin: 8px;
+}
+button:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+}
+.task {
+    background: var(--task-bg);
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+.task:hover {
+    background: var(--task-hover);
+}
+
+.task[data-priority="high"] {
+    border-left-color: red;
+}
+.task[data-priority="medium"] {
+    border-left-color: orange;
+}
+.task[data-priority="low"] {
+    border-left-color: green;
+}
+
+.sort-date {
+    background: #6f42c1;
+}
+.sort-date:hover {
+    background: #563d7c;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: var(--completed-task);
+}
+
+button {
+    width: 100%; /* Ensure all buttons take full width */
+    max-width: 180px; /* Set a reasonable max width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Make buttons inline */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
